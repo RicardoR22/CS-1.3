@@ -94,7 +94,8 @@ class ArrayQueue(object):
     def dequeue(self):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(n) because it is removing the item at index 0,
+        which means every item after it has to be shifted forward"""
         if self.is_empty():
             raise ValueError("The queue is empty")
 
