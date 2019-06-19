@@ -1,6 +1,8 @@
 [
-  "recursion_test.py::RecursionTest::test_factorial_with_floating_point_numbers",
-  "recursion_test.py::RecursionTest::test_factorial_with_large_integers",
-  "recursion_test.py::RecursionTest::test_factorial_with_negative_integers",
-  "recursion_test.py::RecursionTest::test_factorial_with_small_integers"
+  "stack_test.py::StackTest::test_init",
+  "stack_test.py::StackTest::test_init_with_list",
+  "stack_test.py::StackTest::test_length",
+  "stack_test.py::StackTest::test_peek",
+  "stack_test.py::StackTest::test_pop",
+  "stack_test.py::StackTest::test_push"
 ]
