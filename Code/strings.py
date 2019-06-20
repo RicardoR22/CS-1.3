@@ -1,63 +1,61 @@
 #!python
 
 def contains(text, pattern):
-    """Return a boolean indicating whether pattern occurs in text."""
+    """Return a boolean indicating whether pattern occurs in text.
+    Time Complexity: O(n) because of the find_all_indexes function
+    Space Complexity: O(n) because of the find_all_indexes function"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # TODO: Implement contains here (iteratively and/or recursively)
 
-    max_index = len(text) - (len(pattern) - 1)
+    found_indexes = find_all_indexes(text, pattern) # O(n) time and space
 
-    for index in range(0, max_index):
-        curr_range = index + len(pattern)
-        curr_letters = text[index:curr_range]
+    if found_indexes == []: # O(1) time
+        return False # O(1) time
 
-        if curr_letters == pattern:
-            return True
-
-    return False
+    return True # O(1) time
 
 
 
 def find_index(text, pattern):
     """Return the starting index of the first occurrence of pattern in text,
-    or None if not found."""
+    or None if not found.
+    Time Complexity: O(n) because of the find_all_indexes function
+    Space Complexity: O(n) because of the find_all_indexes function"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
 
-    max_index = len(text) - (len(pattern) - 1)
+    found_indexes = find_all_indexes(text, pattern) # O(n) time and space
 
-    for index in range(0, max_index):
-        curr_range = index + len(pattern)
-        curr_letters = text[index:curr_range]
+    if found_indexes == []: # O(1) time
+        return None # O(1) time
 
-        if curr_letters == pattern:
-            return index
-
-    return None
+    return found_indexes[0] # O(1) time
 
 
 def find_all_indexes(text, pattern):
     """Return a list of starting indexes of all occurrences of pattern in text,
-    or an empty list if not found."""
+    or an empty list if not found.
+    Time Complexity: O(n) where n is the number of characters between index 0 and our max_index
+    Space Complexity: O(n) where n is the number of items in the array holding our indexes"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
 
-    if len(pattern) is not 0:
-        max_index = len(text) - (len(pattern) - 1)
+    if len(pattern) is not 0: # O(1) time
+        max_index = len(text) - (len(pattern) - 1) # O(1) time, O(1) space
     else:
-        max_index = len(text)
+        max_index = len(text) # O(1) time
 
-    indexes = []
+    indexes = [] # O(1) time, O(n) since we don't know how many items will go into the array
 
-    for index in range(0, max_index):
-        curr_range = index + len(pattern)
-        curr_letters = text[index:curr_range]
+    for index in range(0, max_index): # O(n) time where n is the number of characters between 0 and max_index
+        curr_range = index + len(pattern) # O(1) time, O(1) space
+        curr_letters = text[index:curr_range] # O(1) space
 
-        if curr_letters == pattern:
-            indexes.append(index)
+        if curr_letters == pattern: # O(1) time
+            indexes.append(index) # O(1) time
 
-    return indexes
+    return indexes # O(1) time
 
 
 def test_string_algorithms(text, pattern):
