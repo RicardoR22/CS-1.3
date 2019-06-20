@@ -15,6 +15,27 @@ def contains(text, pattern):
 
     return True # O(1) time
 
+def contains_recursive(text, pattern, index=None):
+    """Return a boolean indicating whether pattern occurs in text."""
+    assert isinstance(text, str), 'text is not a string: {}'.format(text)
+    assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
+
+    if index is None:
+        index = 0
+
+    max_index = len(text) - (len(pattern) - 1)
+
+    if index > max_index:
+        return False
+
+    curr_range = index + len(pattern)
+    curr_letters = text[index:curr_range]
+
+    if curr_letters == pattern:
+        return True
+    else:
+        return contains_recursive(text, pattern, index + 1)
+
 
 
 def find_index(text, pattern):

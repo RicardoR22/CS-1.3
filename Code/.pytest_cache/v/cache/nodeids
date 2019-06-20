@@ -1,4 +1,7 @@
 [
+  "strings_test.py::StringsTest::test_contains_recursive_with_complex_patterns",
+  "strings_test.py::StringsTest::test_contains_recursive_with_matching_patterns",
+  "strings_test.py::StringsTest::test_contains_recursive_with_non_matching_patterns",
   "strings_test.py::StringsTest::test_contains_with_complex_patterns",
   "strings_test.py::StringsTest::test_contains_with_matching_patterns",
   "strings_test.py::StringsTest::test_contains_with_non_matching_patterns",
