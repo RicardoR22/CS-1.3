@@ -64,7 +64,7 @@ def find_all_indexes(text, pattern):
 
     if len(pattern) is not 0: # O(1) time
         max_index = len(text) - (len(pattern) - 1) # O(1) time, O(1) space
-    else:
+    else:   
         max_index = len(text) # O(1) time
 
     indexes = [] # O(1) time, O(n) since we don't know how many items will go into the array
